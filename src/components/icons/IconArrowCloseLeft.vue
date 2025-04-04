@@ -1,0 +1,29 @@
+<template>
+  <svg
+    xmlns="http://www.w3.org/2000/svg"
+    width="32"
+    height="32"
+    viewBox="0 0 24 24"
+  >
+    <g
+      fill="none"
+      stroke="currentColor"
+      stroke-linecap="round"
+      stroke-linejoin="round"
+      stroke-width="2"
+    >
+      <path d="M3 3v18" />
+      <path d="M21 12h-13.5" />
+      <path d="M7 12l7 7M7 12l7 -7" />
+      <!-- <path stroke-dasharray="20" stroke-dashoffset="20" d="M3 3v18">
+        <animate fill="freeze" attributeName="stroke-dashoffset" dur="0.2s" values="20;0"/>
+      </path>
+      <path stroke-dasharray="16" stroke-dashoffset="16" d="M21 12h-13.5">
+        <animate fill="freeze" attributeName="stroke-dashoffset" begin="0.3s" dur="0.2s" values="16;0"/>
+      </path>
+      <path stroke-dasharray="12" stroke-dashoffset="12" d="M7 12l7 7M7 12l7 -7">
+        <animate fill="freeze" attributeName="stroke-dashoffset" begin="0.5s" dur="0.2s" values="12;0"/>
+      </path> -->
+    </g>
+  </svg>
+</template>

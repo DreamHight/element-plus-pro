@@ -1,0 +1,1 @@
+export const CHECK_CARD_GROUP_KEY: string = 'CHECK_CARD_GROUP';
