@@ -23,7 +23,7 @@ jobs:
         with:
           branch: gh-pages # 指定分支为gh-pages，用于存放生成的静态文件
           publish_dir: ./dist  # 指定发布目录为dist目录
-          github_token: ${{ secrets.ACL_DEMO }} # 自动提供的token，用于认证推送操作
+          github_token: ${{ secrets.MY_GITHUB_TOKEN }} # 自动提供的token，用于认证推送操作
           # 2963960225@qq.com
           user_name: ${{ secrets.MY_USER_NAME }}
           # abc199411160
