@@ -6,6 +6,7 @@
       activeColor: ['#f00', '#0f0', '#00f'],
     }" -->
     <ProTable
+      :show-serial-number="true"
       :show-operation="true"
       :operation-column-props="{
         fixed: 'left',
