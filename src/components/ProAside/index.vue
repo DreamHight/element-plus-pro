@@ -266,6 +266,6 @@ function asideBottomCommandHandler(item: IAsideBottom): void {
   position: absolute;
   top: 15px;
   right: -12px;
-  z-index: 90;
+  z-index: 8;
 }
 </style>

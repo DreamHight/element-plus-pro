@@ -12,14 +12,25 @@ import { shallowRef } from 'vue';
 
 const foo = shallowRef({
   a: {
-    b: 2
+    b: 2,
+    c: {
+      d: 3,
+    }
   }
 })
 setTimeout(() => {
   foo.value = {
     a: {
-      b: 3
+      b: 2,
+      c: {
+        d: 4,
+      }
     }
   }
-}, 1000)
+}, 1000);
+{
+  let aa = 1;
+  console.log('aa', aa);
+}
+// console.log('aa2', aa);
 </script>

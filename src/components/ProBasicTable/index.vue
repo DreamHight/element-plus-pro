@@ -240,6 +240,22 @@
           />
         </template>
       </el-table-column>
+      <el-table-column
+        v-else-if="column.imageSlotProps"
+        :prop="column.prop"
+        :label="column.label"
+        :column-key="column.prop"
+        v-bind="column.columnProps"
+      >
+        <template #default="scope">
+          <el-image
+            :src="scope.row[column.prop]"
+            :z-index="10"
+            preview-teleported
+            v-bind="column.imageSlotProps"
+          />
+        </template>
+      </el-table-column>
 
       <el-table-column
         v-else-if="column.render"

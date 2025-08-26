@@ -1,0 +1,31 @@
+name: deploy
+
+on:
+  push:
+    branches: [main] # main 分支有 push 时触发
+
+jobs:
+  deploy:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Checkout
+        uses: actions/checkout@v2
+
+      - name: Build
+        uses: actions/setup-node@master
+        with:
+          node-version: '20.x'
+      - run: npm install
+      - run: npm run build-only
+
+      - name: Deploy
+        uses: peaceiris/actions-gh-pages@v3
+        with:
+          branch: gh-pages # 指定分支为gh-pages，用于存放生成的静态文件
+          publish_dir: ./dist  # 指定发布目录为dist目录
+          github_token: ${{ secrets.ACL_DEMO }} # 自动提供的token，用于认证推送操作
+          # 2963960225@qq.com
+          user_name: ${{ secrets.MY_USER_NAME }}
+          # abc199411160
+          user_email: ${{ secrets.MY_USER_EMAIL }}
+          commit_message: "自动部署"

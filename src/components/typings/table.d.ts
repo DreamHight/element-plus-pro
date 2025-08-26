@@ -1,5 +1,14 @@
 import type { Component, RendererElement, RendererNode, VNode } from 'vue';
-import type { BadgeProps, FormItemProps, ProgressFn, ProgressProps, RateProps, TableColumnCtx, TagProps } from 'element-plus';
+import type {
+  BadgeProps,
+  FormItemProps,
+  ProgressFn,
+  ProgressProps,
+  RateProps,
+  TableColumnCtx,
+  TagProps,
+  ImageProps,
+} from "element-plus";
 import { IFormItemFieldProps, ISeparator } from './queryFilter';
 import { IAvatarGroupProps } from './avatarGroupProps';
 import { IFieldProps } from './field';
@@ -27,7 +36,7 @@ export interface IColumn {
   hideInTable?: boolean;
   headerSlotName?: string;
   columnSlotName?: string;
-  columnProps?: any;//TableColumnCtx<any>;
+  columnProps?: any; //TableColumnCtx<any>;
 
   copyable?: boolean;
 
@@ -47,6 +56,8 @@ export interface IColumn {
   renderDotHalo?: RenderDotHalo;
 
   avatarGroupSlotProps?: Partial<IAvatarGroupProps>;
+
+  imageSlotProps?: Partial<ImageProps>;
 
   renderContent?: RenderContentFn;
   render?: RenderNodeFn;

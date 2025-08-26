@@ -8,7 +8,7 @@
   >
     <el-space class="title">
       <el-icon><IconPlus /></el-icon>
-      <span>{{ addText }}==</span>
+      <span>{{ addText }}</span>
     </el-space>
   </el-card>
 

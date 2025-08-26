@@ -176,20 +176,6 @@ const data = reactive<ITableData[]>([
     prop4: '已上线',
     prop5: '2025-01-15 12:49:54',
   },
-  {
-    prop1: 'TradeCode 89',
-    prop2: '这是一段描述',
-    prop3: '818万',
-    prop4: '运行中',
-    prop5: '2025-01-16 12:49:54',
-  },
-  {
-    prop1: 'TradeCode 88',
-    prop2: '这是一段描述',
-    prop3: '817万',
-    prop4: '异常',
-    prop5: '2025-01-18 12:49:54',
-  },
 ]);
 
 const toolbarProps: ITableToolbarProps = {

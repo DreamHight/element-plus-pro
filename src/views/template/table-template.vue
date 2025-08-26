@@ -1,5 +1,10 @@
 <template>
   <div>
+    <!-- :show-serial-number="true"
+    :table-serial-number-props="{
+      variant: 'background',
+      activeColor: ['#f00', '#0f0', '#00f'],
+    }" -->
     <ProTable
       :show-operation="true"
       :operation-column-props="{
@@ -9,7 +14,8 @@
       :data="data"
       :border="true"
       :toolbar-props="toolbarProps"
-      :paginationProps="paginationProps"
+      pagination-position="both"
+      :pagination-props="paginationProps"
     >
       <!-- @row-click="rowClickHandler" size="small" table-layout="auto" -->
       <template #prop1HeaderSlot="slotProps">
@@ -92,6 +98,9 @@ const columns = reactive<IColumn[]>([
     // tagSlotProps: {
     //   type: 'primary',
     // },
+    columnProps: {
+      width: 120,
+    },
     tagSlotProps: {},
     renderTagStatus: (row: ITableData, column: TableColumnCtx<ITableData>) => {
       if ('815万' === row[column.property]) {
@@ -167,6 +176,9 @@ const columns = reactive<IColumn[]>([
   {
     prop: 'prop5',
     label: '上次调度时间',
+    columnProps: {
+      width: 120,
+    },
     // columnProps: {
     //   showOverflowTooltip: true,
       // formatter: (row: ITableData, column: TableColumnCtx<ITableData>) => {
@@ -178,6 +190,9 @@ const columns = reactive<IColumn[]>([
   {
     prop: 'prop6',
     label: '头像',
+    columnProps: {
+      width: 120,
+    },
     avatarGroupSlotProps: {},
   },
   {
@@ -235,12 +250,23 @@ const columns = reactive<IColumn[]>([
   {
     prop: 'prop8',
     label: '重要性',
+    columnProps: {
+      minWidth: 120,
+      align: 'center',
+    },
     rateSlotProps: {
       disabled: true,
       allowHalf: true,
       // showScore: true,
       // textColor: '#ff9900',
       // scoreTemplate: '{value} points',
+    },
+  },
+  {
+    prop: 'prop9',
+    label: '图片',
+    imageSlotProps: {
+      previewSrcList: ['https://cdn.eleadmin.com/20200609/948344a2a77c47a7a7b332fe12ff749a.jpg'],
     },
   },
   // {
@@ -261,6 +287,7 @@ interface ITableData {
   prop6?: IAvatarGroup[];
   prop7?: number;
   prop8?: number;
+  prop9?: string;
   [key: string]: any;
 }
 const data = reactive<ITableData[]>([
@@ -290,6 +317,7 @@ const data = reactive<ITableData[]>([
     ],
     prop7: 99.9,
     prop8: 5,
+    prop9: 'https://cdn.eleadmin.com/20200609/948344a2a77c47a7a7b332fe12ff749a.jpg',
   },
   {
     prop1: 'TradeCode 98',
@@ -313,6 +341,7 @@ const data = reactive<ITableData[]>([
     ],
     prop7: 100,
     prop8: 3.7,
+    prop9: 'https://cdn.eleadmin.com/20200609/948344a2a77c47a7a7b332fe12ff749a.jpg',
   },
   {
     prop1: 'TradeCode 97',
@@ -332,6 +361,7 @@ const data = reactive<ITableData[]>([
     ],
     prop7: 30,
     prop8: 2.5,
+    prop9: 'https://cdn.eleadmin.com/20200609/948344a2a77c47a7a7b332fe12ff749a.jpg',
   },
   {
     prop1: 'TradeCode 96',
@@ -341,12 +371,13 @@ const data = reactive<ITableData[]>([
     prop5: '2025-01-16 12:49:54',
     prop6: [
       {
-        tooltip: '全村人的希望',
+        // tooltip: '全村人的希望',
         src: 'https://cdn.eleadmin.com/20200609/948344a2a77c47a7a7b332fe12ff749a.jpg',
       },
     ],
     prop7: 0,
     prop8: 2,
+    prop9: 'https://cdn.eleadmin.com/20200609/948344a2a77c47a7a7b332fe12ff749a.jpg',
   },
   {
     prop1: 'TradeCode 95',
@@ -356,12 +387,13 @@ const data = reactive<ITableData[]>([
     prop5: '2025-01-16 12:49:54',
     prop6: [
       {
-        tooltip: 'UserFilled',
+        // tooltip: 'UserFilled',
         icon: 'UserFilled',
       },
     ],
     prop7: 10,
     prop8: 1,
+    prop9: 'https://cdn.eleadmin.com/20200609/948344a2a77c47a7a7b332fe12ff749a.jpg',
   },
 ]);
 function rowClickHandler(row: any, column: any, event: Event) {
@@ -377,7 +409,8 @@ function cc(text: string): void {
 }
 
 const paginationProps: IPaginationProps = {
-  total: data.length,
+  total: data.length + 10,
+  alignment: 'center',
 };
 
 onMounted(() => {
